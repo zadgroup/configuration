@@ -98,8 +98,11 @@
 
 - name: env vars sourced in bashrc
   lineinfile: >
-    dest={{ HADOOP_COMMON_USER_HOME }}/.bashrc state=present
-    regexp="^. {{ hadoop_common_env }}" line=". {{ hadoop_common_env }}"
+    dest={{ HADOOP_COMMON_USER_HOME }}/.bashrc
+    state=present
+    regexp="^. {{ hadoop_common_env }}"
+    line=". {{ hadoop_common_env }}"
+    insertbefore=BOF
 
 - name: env vars sourced in hadoop env
   lineinfile: >
