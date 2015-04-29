@@ -1,4 +1,9 @@
--Role: edx-ansible
+- Role: edxapp
+  - __BACKWARDSS_INCOMPATIBLE__: The edxapp role no longer installs the 'custom.txt' requirements file.
+  - The edxapp role no longer uses checksums to bypass pip installs.
+    - pip install will always run for all known requirements files.
+
+- Role: edx-ansible
   - `/edx/bin/update` no longer runs the ansible command with `--tags deploy`
 
 - Role: edxapp
