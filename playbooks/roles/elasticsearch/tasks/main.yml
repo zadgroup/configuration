@@ -32,6 +32,7 @@
 - name: download elasticsearch
   get_url: >
     url={{ elasticsearch_url }}
+    validate_certs=no
     dest=/var/tmp/{{ elasticsearch_file }}
     force=no
   register: elasticsearch_reinstall
